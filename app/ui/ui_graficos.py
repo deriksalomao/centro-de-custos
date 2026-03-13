@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 class GraficosFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
-        self.pack(fill=ttk.BOTH, expand=True)
+        self.pack(fill="both", expand=True)
 
     def atualizar_todos_os_graficos(self, df_filtrado):
         for widget in self.winfo_children():
@@ -19,7 +19,7 @@ class GraficosFrame(ttk.Frame):
             return
 
         notebook_graficos = ttk.Notebook(self)
-        notebook_graficos.pack(fill=ttk.BOTH, expand=True, padx=5, pady=5)
+        notebook_graficos.pack(fill="both", expand=True, padx=5, pady=5)
 
         tab_evolucao = ttk.Frame(notebook_graficos)
         tab_pizza = ttk.Frame(notebook_graficos)
@@ -57,7 +57,7 @@ class GraficosFrame(ttk.Frame):
 
         canvas = FigureCanvasTkAgg(figura, master=parent_tab)
         canvas.draw()
-        canvas.get_tk_widget().pack(fill=ttk.BOTH, expand=True, padx=10, pady=10)
+        canvas.get_tk_widget().pack(fill="both", expand=True, padx=10, pady=10)
 
     def _criar_grafico_despesas_pizza(self, df, parent_tab):
         df_despesas = df[df['Tipo'] == 'Despesa'].copy()
@@ -87,4 +87,4 @@ class GraficosFrame(ttk.Frame):
 
         canvas = FigureCanvasTkAgg(figura, master=parent_tab)
         canvas.draw()
-        canvas.get_tk_widget().pack(fill=ttk.BOTH, expand=True, padx=10, pady=10)
+        canvas.get_tk_widget().pack(fill="both", expand=True, padx=10, pady=10)

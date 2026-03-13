@@ -5,7 +5,7 @@ class LoginWindow(ttk.Frame):
     def __init__(self, master, on_success):
         super().__init__(master, padding=20)
         self.master = master
-        self.pack(fill=ttk.BOTH, expand=True)
+        self.pack(fill="both", expand=True)
         self.on_login_success = on_success
         
         self.master.title("Login")
@@ -22,17 +22,17 @@ class LoginWindow(ttk.Frame):
         # Usuário
         user_frame = ttk.Frame(main_frame)
         user_frame.pack(pady=5)
-        ttk.Label(user_frame, text="Usuário:", width=10).pack(side=ttk.LEFT)
+        ttk.Label(user_frame, text="Usuário:", width=10).pack(side="left")
         self.user_entry = ttk.Entry(user_frame, width=30)
-        self.user_entry.pack(side=ttk.LEFT)
+        self.user_entry.pack(side="left")
         self.user_entry.insert(0, "admin")
 
         # Senha
         pass_frame = ttk.Frame(main_frame)
         pass_frame.pack(pady=5)
-        ttk.Label(pass_frame, text="Senha:", width=10).pack(side=ttk.LEFT)
+        ttk.Label(pass_frame, text="Senha:", width=10).pack(side="left")
         self.pass_entry = ttk.Entry(pass_frame, show="*", width=30)
-        self.pass_entry.pack(side=ttk.LEFT)
+        self.pass_entry.pack(side="left")
         self.pass_entry.insert(0, "admin")
         self.pass_entry.bind("<Return>", self._login)
 
